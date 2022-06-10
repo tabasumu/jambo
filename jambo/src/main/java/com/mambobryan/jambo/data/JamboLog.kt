@@ -1,9 +1,7 @@
 package com.mambobryan.jambo.data
 
-import androidx.room.ColumnInfo
-import androidx.room.Dao
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.paging.PagingSource
+import androidx.room.*
 import java.util.*
 
 @Entity(tableName = "jamboLogTbl")
@@ -25,6 +23,33 @@ data class JamboLog(
 
 @Dao
 interface JamboLogDao {
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(vararg jamboLog: JamboLog)
+
+    @Delete
+    fun delete(vararg jamboLog: JamboLog)
+
+    @Transaction
+    @Query("DELETE FROM jamboLogTbl")
+    fun deleteAll()
+
+    @Transaction
+    @Query("SELECT * FROM jamboLogTbl ORDER BY log_id ASC")
+    fun allJamboLogs(): PagingSource<Int, JamboLog>
+
+    @Transaction
+    @Query("SELECT * FROM jamboLogTbl WHERE log_tag = :tag ORDER BY log_id ASC")
+    fun filterJamboLogWithTag(tag: String): PagingSource<Int, JamboLog>
+
+    @Transaction
+    @Query("SELECT * FROM jamboLogTbl WHERE log_tag = :tag AND log_message LIKE '%' || :message || '%' ORDER BY log_id ASC")
+    fun filterJamboLogWithTagAndMsg(tag: String, message: String): PagingSource<Int, JamboLog>
+
+    @Transaction
+    @Query("SELECT * FROM jamboLogTbl WHERE log_message LIKE '%' || :message || '%' ORDER BY log_id ASC")
+    fun searchJamboLogs(message: String): PagingSource<Int, JamboLog>
+
 
 }
 
