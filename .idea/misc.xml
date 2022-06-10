@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.334375" />
+        <entry key="jambo/src/main/res/layout/activity_jambo.xml" value="0.3515625" />
+        <entry key="jambo/src/main/res/layout/item_jambo_log.xml" value="0.33" />
+        <entry key="jambo/src/main/res/menu/menu_main.xml" value="0.34615384615384615" />
+        <entry key="jambodisplay/src/main/res/layout/activity_main.xml" value="0.1287037037037037" />
       </map>
     </option>
   </component>

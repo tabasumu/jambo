@@ -1,4 +1,4 @@
-package com.mambobryan.jambo
+package com.mambobryan.sample
 
 import org.junit.Test
 
