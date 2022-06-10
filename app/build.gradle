@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.mambobryan.jambo"
+        applicationId "com.mambobryan.sample"
         minSdk 23
         targetSdk 32
         versionCode 1
@@ -40,7 +40,6 @@ android {
 dependencies {
 
     implementation(project(":jambo"))
-    implementation(project(":jambodisplay"))
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'

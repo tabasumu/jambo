@@ -202,7 +202,7 @@ class Jambo private constructor(){
     open class DebugTree : Tree() {
         private val fqcnIgnore = listOf(
             Jambo::class.java.name,
-            Jambo.Forest::class.java.name,
+            Forest::class.java.name,
             Tree::class.java.name,
             DebugTree::class.java.name
         )
@@ -422,9 +422,9 @@ class Jambo private constructor(){
                 requireNotNull(tree) { "trees contained null" }
                 require(tree !== this) { "Cannot plant Jambo into itself." }
             }
-            synchronized(this.trees) {
-                Collections.addAll(this.trees, *trees)
-                treeArray = this.trees.toTypedArray()
+            synchronized(Forest.trees) {
+                Collections.addAll(Forest.trees, *trees)
+                treeArray = Forest.trees.toTypedArray()
             }
         }
 

@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 rootProject.name = "Jambo"
 include ':app'
 include ':jambo'
-include ':jambodisplay'
