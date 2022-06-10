@@ -1,6 +1,7 @@
 package com.mambobryan.jambo.data
 
 import androidx.room.ColumnInfo
+import androidx.room.Dao
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
@@ -21,3 +22,9 @@ data class JamboLog(
     @ColumnInfo(name = "log_type")
     val type: LogType
 )
+
+@Dao
+interface JamboLogDao {
+
+}
+
