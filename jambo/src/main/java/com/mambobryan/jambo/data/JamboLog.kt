@@ -49,9 +49,9 @@ interface JamboLogDao {
     @Query("SELECT * FROM jamboLogTbl ORDER BY log_id ASC")
     fun allJamboLogs(): PagingSource<Int, JamboLog>
 
-    @Transaction
-    @Query("SELECT * FROM jamboLogTbl WHERE log_tag = :tag ORDER BY log_id ASC")
-    fun filterJamboLogWithTag(tag: String): PagingSource<Int, JamboLog>
+//    @Transaction
+//    @Query("SELECT * FROM jamboLogTbl WHERE log_tag = :tag ORDER BY log_id ASC")
+//    fun filterJamboLogWithTag(tag: String): PagingSource<Int, JamboLog>
 
     @Transaction
     @Query("SELECT * FROM jamboLogTbl WHERE log_tag = :tag AND log_message LIKE '%' || :message || '%' ORDER BY log_id ASC")

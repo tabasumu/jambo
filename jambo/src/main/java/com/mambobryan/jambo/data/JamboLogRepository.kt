@@ -24,7 +24,7 @@ class JamboLogRepository(private val db: JamboLocalDB) {
     }
 
     fun getLogs(tag: LogType = LogType.ALL, message: String = "") = Pager(
-        config = PagingConfig(pageSize = 20, maxSize = 50, enablePlaceholders = false),
+        config = PagingConfig(pageSize = 20, enablePlaceholders = false),
         pagingSourceFactory = {
             when (tag) {
                 LogType.ALL -> jamboLogDao.searchJamboLogs(message = message)
@@ -33,5 +33,5 @@ class JamboLogRepository(private val db: JamboLocalDB) {
             }
 
         }
-    )
+    ).flow
 }
