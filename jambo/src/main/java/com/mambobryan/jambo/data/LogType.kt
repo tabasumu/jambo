@@ -6,7 +6,8 @@ package com.mambobryan.jambo.data
  * @email mambobryan@gmail.com
  * Created 6/10/22 at 11:46 AM
  */
-enum class LogType{
+enum class LogType {
+    ALL,
     INFO,
     VERBOSE,
     ERROR,

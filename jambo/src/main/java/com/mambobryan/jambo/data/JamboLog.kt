@@ -21,14 +21,25 @@ data class JamboLog(
     val type: LogType
 )
 
+class Converters {
+    @TypeConverter
+    fun LogType.toName() = this.name
+
+    @TypeConverter
+    fun String.toLogType() = try {
+        LogType.valueOf(this)
+    } catch (ex: Exception) {
+        LogType.VERBOSE
+    }
+}
+
+
 @Dao
 interface JamboLogDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(vararg jamboLog: JamboLog)
 
-    @Delete
-    fun delete(vararg jamboLog: JamboLog)
 
     @Transaction
     @Query("DELETE FROM jamboLogTbl")
