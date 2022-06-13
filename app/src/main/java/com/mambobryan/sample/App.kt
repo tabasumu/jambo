@@ -19,7 +19,7 @@ class App : Application() {
     }
 
     private fun plantJambo() {
-        Jambo.plant(Jambo.DebugTree())
+        Jambo.plant(Jambo.DebugTree(this))
     }
 
 }

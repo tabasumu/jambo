@@ -1,7 +1,13 @@
 package com.mambobryan.jambo
 
+import android.app.Application
+import android.content.Context
 import android.os.Build
 import android.util.Log
+import androidx.lifecycle.ViewModel
+import com.mambobryan.jambo.data.JamboLog
+import com.mambobryan.jambo.data.LogType
+import com.mambobryan.jambo.ui.JamboViewModel
 import org.jetbrains.annotations.NonNls
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -199,7 +205,10 @@ class Jambo private constructor(){
     }
 
     /** A [Tree] for debug builds. Automatically infers the tag from the calling class. */
-    open class DebugTree : Tree() {
+    open class DebugTree(val application: Application) : Tree() {
+
+        val viewModel = JamboViewModel(application)
+
         private val fqcnIgnore = listOf(
             Jambo::class.java.name,
             Forest::class.java.name,
@@ -242,11 +251,7 @@ class Jambo private constructor(){
          */
         override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
             if (message.length < MAX_LOG_LENGTH) {
-                if (priority == Log.ASSERT) {
-                    Log.wtf(tag, message)
-                } else {
-                    Log.println(priority, tag, message)
-                }
+                print(priority, tag, message)
                 return
             }
 
@@ -259,14 +264,34 @@ class Jambo private constructor(){
                 do {
                     val end = Math.min(newline, i + MAX_LOG_LENGTH)
                     val part = message.substring(i, end)
-                    if (priority == Log.ASSERT) {
-                        Log.wtf(tag, part)
-                    } else {
-                        Log.println(priority, tag, part)
-                    }
+                    print(priority, tag, part)
                     i = end
                 } while (i < newline)
                 i++
+            }
+        }
+
+        private fun print(priority: Int, tag: String?, message: String) {
+            if (priority == Log.ASSERT) {
+                Log.wtf(tag, message)
+            } else {
+                Log.println(priority, tag, message)
+            }.also {
+                viewModel.saveLog(
+                    JamboLog(
+                        tag = tag.toString(),
+                        packageName = application.packageName,
+                        message = message,
+                        type = when(priority){
+                            Log.ASSERT -> LogType.ASSERT
+                            Log.DEBUG -> LogType.DEBUG
+                            Log.WARN -> LogType.WARN
+                            Log.INFO -> LogType.INFO
+                            Log.VERBOSE -> LogType.VERBOSE
+                            else -> LogType.ALL
+                        }
+                    )
+                )
             }
         }
 

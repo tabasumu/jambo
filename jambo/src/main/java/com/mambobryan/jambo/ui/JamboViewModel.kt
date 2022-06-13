@@ -31,22 +31,15 @@ class JamboViewModel(application: Application) : AndroidViewModel(application) {
     }.flatMapLatest { (tag, query) -> repository.getLogs(tag, query) }
     val logs = _logs
 
-    init {
-        viewModelScope.launch {
-            repository.saveLogs(
-                JamboLog(
-                    tag = "I/Main",
-                    packageName = "com.mambo.me",
-                    message = "I was logged recent ${Calendar.getInstance().time}",
-                    type = LogType.INFO
-                )
-            )
-        }
-    }
-
     fun deleteAll() {
         viewModelScope.launch {
             repository.clearLogs()
+        }
+    }
+
+    fun saveLog(log: JamboLog){
+        viewModelScope.launch {
+            repository.saveLogs(log)
         }
     }
 

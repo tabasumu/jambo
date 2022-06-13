@@ -1,11 +1,13 @@
 package com.mambobryan.jambo.ui
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mambobryan.jambo.data.JamboLog
+import com.mambobryan.jambo.data.LogType
 import com.mambobryan.jambo.databinding.ItemJamboLogBinding
 
 /**
@@ -54,11 +56,22 @@ class JamboLogAdapter :
         fun bind(log: JamboLog) {
             binding.apply {
 
-                val message = "${log.message} "
-                tvLogMessage.text = message
+                tvLogTag.text = log.tag
+                tvLogPackage.text = log.packageName
+                tvLogMessage.text = log.message
+                tvLogType.text = log.type.name
 
+                val color = when (log.type) {
+                    LogType.ALL -> "#FFFEEB"
+                    LogType.INFO -> "#EBEBEB"
+                    LogType.VERBOSE -> "#C2F3FF"
+                    LogType.ERROR -> "#FFC2C2"
+                    LogType.DEBUG -> "#FFE1C2"
+                    LogType.WARN -> "#C2FFC2"
+                    LogType.ASSERT -> "#D2C3FE"
+                }
 //                val color = poem.topic?.color ?: "#94F292"
-//                layoutArtistBg.setBackgroundColor(Color.parseColor(color))
+                layoutLogBg.setBackgroundColor(Color.parseColor(color))
 
             }
         }
