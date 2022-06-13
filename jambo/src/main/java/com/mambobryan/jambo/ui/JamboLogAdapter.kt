@@ -1,12 +1,19 @@
 package com.mambobryan.jambo.ui
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mambobryan.jambo.data.JamboLog
+import com.mambobryan.jambo.data.LogType
 import com.mambobryan.jambo.databinding.ItemJamboLogBinding
+import com.mambobryan.jambo.helpers.getColor
+import com.mambobryan.jambo.helpers.getFullTag
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Jambo
@@ -54,13 +61,36 @@ class JamboLogAdapter :
         fun bind(log: JamboLog) {
             binding.apply {
 
-                val message = "${log.message} "
-                tvLogMessage.text = message
+                val color = log.getColor()
+                val tag = log.getFullTag()
 
-//                val color = poem.topic?.color ?: "#94F292"
-//                layoutArtistBg.setBackgroundColor(Color.parseColor(color))
+                tvLogDate.text = log.timestamp.toLogDateString()
+                tvLogMessage.text = log.message
+                tvLogTag.text = tag
+                layoutLogBg.setBackgroundColor(Color.parseColor(color.first))
+                layoutLogHintColor.setBackgroundColor(Color.parseColor(color.second))
+                tvViewMore.isVisible = (log.type == LogType.ERROR || tvLogMessage.lineCount >= 3)
 
             }
+        }
+
+        private fun color(log: JamboLog): Pair<String, String> {
+            val color = when (log.type) {
+                LogType.ALL -> Pair("#F5F5F5", "#C2C2C2")
+                LogType.INFO -> Pair("#EBF9FF", "#85DAFF")      // blue
+                LogType.VERBOSE -> Pair("#EBF9FF", "#85DAFF")   // blue
+                LogType.ERROR -> Pair("#FFEBEB", "#FF8585")     // red
+                LogType.DEBUG -> Pair("#FFFFEB", "#FFFF85")     // yellow
+                LogType.WARN -> Pair("#FFF8EB", "#FFD485")      // orange
+                LogType.ASSERT -> Pair("#EBFFEB", "#85FF85")    // green
+            }
+            return color
+        }
+
+        private fun Long.toLogDateString(): String {
+            val date = Date(this)
+            val format = SimpleDateFormat("dd.MM.yyyy   HH:mm:ss")
+            return format.format(date)
         }
 
     }
