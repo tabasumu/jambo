@@ -1,10 +1,8 @@
 package com.mambobryan.jambo
 
 import android.app.Application
-import android.content.Context
 import android.os.Build
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.mambobryan.jambo.data.JamboLog
 import com.mambobryan.jambo.data.LogType
 import com.mambobryan.jambo.ui.JamboViewModel
@@ -14,7 +12,6 @@ import java.io.StringWriter
 import java.util.*
 import java.util.Collections.unmodifiableList
 import java.util.regex.Pattern
-import kotlin.collections.ArrayList
 
 /**
  * Jambo
@@ -162,22 +159,22 @@ class Jambo private constructor(){
                 return
             }
 
-            var message = message
-            if (message.isNullOrEmpty()) {
+            var mMessage = message
+            if (mMessage.isNullOrEmpty()) {
                 if (t == null) {
                     return  // Swallow message if it's null and there's no throwable.
                 }
-                message = getStackTraceString(t)
+                mMessage = getStackTraceString(t)
             } else {
                 if (args.isNotEmpty()) {
-                    message = formatMessage(message, args)
+                    mMessage = formatMessage(mMessage, args)
                 }
                 if (t != null) {
-                    message += "\n" + getStackTraceString(t)
+                    mMessage += "\n" + getStackTraceString(t)
                 }
             }
 
-            log(priority, tag, message, t)
+            log(priority, tag, mMessage, t)
         }
 
         /** Formats a log message with optional arguments. */
@@ -288,6 +285,7 @@ class Jambo private constructor(){
                             Log.WARN -> LogType.WARN
                             Log.INFO -> LogType.INFO
                             Log.VERBOSE -> LogType.VERBOSE
+                            Log.ERROR -> LogType.ERROR
                             else -> LogType.ALL
                         }
                     )

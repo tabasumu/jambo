@@ -1,25 +1,27 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.Jambo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Jambo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primaryDark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondaryDark</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Background & Surface-->
+        <item name="backgroundColor">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?attr/colorPrimary</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customizations-->
+        <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 
-    <style name="Theme.Jambo.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="checkedIconTint">@color/chip_check_color_state</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color_state</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color_state</item>
+        <item name="android:textColor">@color/chip_text_color_state</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconVisible">true</item>
     </style>
 
-    <style name="Theme.Jambo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Jambo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
