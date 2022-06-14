@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#40e0d0</color>
-    <color name="primaryLight">#7fffff</color>
-    <color name="primaryDark">#00ad9f</color>
-
     <color name="white">#FFFFFF</color>
     <color name="gray">#5C5C5C</color>
     <color name="black">#000000</color>
 
+    <color name="primary">@color/black</color>
+    <color name="colorOnPrimary">@color/white</color>
+
     <color name="background">@color/white</color>
     <color name="surface">#F5F5F5</color>
+
+    <color name="iconColor">@color/black</color>
 
 </resources>

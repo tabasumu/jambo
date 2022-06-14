@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         Jambo.w("Warn : something to do with warn")
         Jambo.wtf("Assert : something to do with assert")
 
-        throw RuntimeException("Triggered crash");
+//        finishAffinity()
+//
+//        throw RuntimeException("Triggered crash");
 
     }
 }

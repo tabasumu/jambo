@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">@color/white</color>
+    <color name="colorOnPrimary">@color/black</color>
+
     <color name="background">#04100F</color>
     <color name="surface">#08211F</color>
+
+    <color name="iconColor">@color/white</color>
+
 </resources>

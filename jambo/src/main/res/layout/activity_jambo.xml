@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="?android:colorBackground">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar_jambo"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -129,10 +129,11 @@
 
             <ImageView
                 android:id="@+id/iv_empty"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="16dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher_round"
+                android:src="@drawable/empty"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No Logs Found"
+                android:text="Empty"
                 app:layout_constraintEnd_toEndOf="@+id/iv_empty"
                 app:layout_constraintStart_toStartOf="@+id/iv_empty"
                 app:layout_constraintTop_toBottomOf="@+id/iv_empty" />
