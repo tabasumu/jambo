@@ -10,43 +10,23 @@ import kotlin.system.exitProcess
  * @email mambobryan@gmail.com
  * Created 6/13/22 at 2:45 PM
  */
-class JamboExceptionHandler(val context: Context) : Thread.UncaughtExceptionHandler {
+class JamboExceptionHandler(val context: Context)   {
 
-    override fun uncaughtException(p0: Thread, p1: Throwable) {
-        Jambo.e(p1)
-        exit()
-//        Thread.UncaughtExceptionHandler()
-    }
 
-    private fun exit() {
-//        val intent = Intent()
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//        startActivity(intent)
 
-//        val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-//        am.killBackgroundProcesses(BuildConfig.APPLICATION_ID)
+//    override fun setUncaughtExceptionHandler(eh: UncaughtExceptionHandler?) {
+//
+//        super.setUncaughtExceptionHandler(eh)
+//    }
+//    override fun getUncaughtExceptionHandler(): UncaughtExceptionHandler? {
+//        return super.getUncaughtExceptionHandler()
+//    }
+//    override fun uncaughtException(p0: Thread, p1: Throwable) {
+//
+//
+////        Thread.UncaughtExceptionHandler()
+//    }
 
-//        Process.sendSignal(Process.myPid(), Process.SIGNAL_KILL);
 
-//        exitProcess(-1)
-
-//        ActivityCompat.finishAffinity(this as Activity)
-
-//        Runtime.getRuntime().exit(1)
-
-//        System.exit(0)
-
-//        System.runFinalization()
-
-//        (context as Activity).finishAffinity()
-
-//        val proc = System.Diagnostics.Process.GetCurrentProcess()
-//        proc.Kill()
-
-//        Application.Exit()
-
-    }
 
 }

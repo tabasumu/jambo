@@ -29,7 +29,6 @@ class JamboLogRepository(private val db: JamboLocalDB) {
             when (tag) {
                 LogType.ALL -> jamboLogDao.searchJamboLogs(message = message)
                 else -> jamboLogDao.filterJamboLogWithTagAndMsg(tag = tag.name, message = message)
-
             }
 
         }
