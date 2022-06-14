@@ -6,10 +6,6 @@ import android.util.Log
 import com.mambobryan.jambo.data.JamboLog
 import com.mambobryan.jambo.data.LogType
 import com.mambobryan.jambo.ui.JamboViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import org.jetbrains.annotations.NonNls
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -284,23 +280,30 @@ class Jambo private constructor() : Thread.UncaughtExceptionHandler {
             } else {
                 Log.println(priority, tag, message)
             }.also {
-                viewModel.saveLog(
+
+                val type = when (priority) {
+                    Log.ASSERT -> LogType.ASSERT
+                    Log.DEBUG -> LogType.DEBUG
+                    Log.WARN -> LogType.WARN
+                    Log.INFO -> LogType.INFO
+                    Log.VERBOSE -> LogType.VERBOSE
+                    Log.ERROR -> LogType.ERROR
+                    else -> LogType.ALL
+                }
+
+                saveLog(
                     JamboLog(
                         tag = tag.toString(),
                         packageName = application.packageName,
                         message = message,
-                        type = when (priority) {
-                            Log.ASSERT -> LogType.ASSERT
-                            Log.DEBUG -> LogType.DEBUG
-                            Log.WARN -> LogType.WARN
-                            Log.INFO -> LogType.INFO
-                            Log.VERBOSE -> LogType.VERBOSE
-                            Log.ERROR -> LogType.ERROR
-                            else -> LogType.ALL
-                        }
+                        type = type
                     )
                 )
             }
+        }
+
+        private fun saveLog(log: JamboLog) {
+            viewModel.saveLog(log)
         }
 
         companion object {
@@ -310,17 +313,14 @@ class Jambo private constructor() : Thread.UncaughtExceptionHandler {
         }
 
         override fun uncaughtException(thread: Thread, throwable: Throwable) {
-            Log.i("TEST", "uncaughtException: ${thread.priority}")
-            CoroutineScope(Dispatchers.Unconfined).launch {
-                viewModel.saveLog(
-                    JamboLog(
-                        tag = tag.toString(),
-                        packageName = application.packageName,
-                        message = throwable.toString(),
-                        type = LogType.ERROR
-                    )
+            saveLog(
+                JamboLog(
+                    tag = tag.toString(),
+                    packageName = application.packageName,
+                    message = throwable.toString(),
+                    type = LogType.ERROR
                 )
-            }
+            )
             oldHandler?.uncaughtException(thread, throwable)
         }
 
