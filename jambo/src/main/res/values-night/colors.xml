@@ -3,8 +3,8 @@
     <color name="primary">@color/white</color>
     <color name="colorOnPrimary">@color/black</color>
 
-    <color name="background">#04100F</color>
-    <color name="surface">#08211F</color>
+    <color name="background">#121212</color>
+    <color name="surface">#1F1F1F</color>
 
     <color name="iconColor">@color/white</color>
 

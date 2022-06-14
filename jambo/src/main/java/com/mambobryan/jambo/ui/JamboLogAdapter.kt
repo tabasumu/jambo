@@ -69,7 +69,6 @@ class JamboLogAdapter :
                 tvLogTag.text = tag
                 layoutLogBg.setBackgroundColor(Color.parseColor(color.first))
                 layoutLogHintColor.setBackgroundColor(Color.parseColor(color.second))
-                tvViewMore.isVisible = (log.type == LogType.ERROR || tvLogMessage.lineCount >= 3)
 
             }
         }
