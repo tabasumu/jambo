@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
-import java.util.*
 
 /**
  * Jambo
@@ -19,7 +18,8 @@ import java.util.*
  * @email mambobryan@gmail.com
  * Created 6/10/22 at 3:18 PM
  */
-class JamboViewModel(application: Application) : AndroidViewModel(application) {
+class JamboViewModel(application: Application) :
+    AndroidViewModel(application) {
 
     private val repository = JamboLogRepository(JamboLocalDB.instance(application))
 
@@ -31,18 +31,8 @@ class JamboViewModel(application: Application) : AndroidViewModel(application) {
     }.flatMapLatest { (tag, query) -> repository.getLogs(tag, query) }
     val logs = _logs
 
-    init {
-        viewModelScope.launch {
-            repository.saveLogs(
-                JamboLog(
-                    tag = "I/Main",
-                    packageName = "com.mambo.me",
-                    message = "I was logged recent ${Calendar.getInstance().time}",
-                    type = LogType.INFO
-                )
-            )
-        }
-    }
+    private val _selectedLog = MutableStateFlow<JamboLog?>(null)
+    val selectedLog get() = _selectedLog
 
     fun deleteAll() {
         viewModelScope.launch {
@@ -50,10 +40,22 @@ class JamboViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun updateSearchQuery(message: String) {
+    fun saveLog(log: JamboLog) {
         viewModelScope.launch {
-            query.value = message
+            repository.saveLogs(log)
         }
+    }
+
+    fun updateTagFilter(logType: LogType) {
+        tag.value = logType
+    }
+
+    fun updateSearchQuery(message: String) {
+        query.value = message
+    }
+
+    fun selectLog(log: JamboLog?) {
+        _selectedLog.value = log
     }
 
 }

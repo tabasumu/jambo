@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.mambobryan.jambo.R
 import com.mambobryan.jambo.data.JamboLog
@@ -31,6 +32,7 @@ class JamboActivity : AppCompatActivity() {
         binding = ActivityJamboBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
 
+        setupToolbar()
 
         setupRecycler()
 
@@ -76,6 +78,36 @@ class JamboActivity : AppCompatActivity() {
 
     }
 
+    private fun setupToolbar() {
+
+        setSupportActionBar(binding.toolbarJambo)
+
+        binding.apply {
+            chipAll.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.ALL, isSelected)
+            }
+            chipInfo.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.INFO, isSelected)
+            }
+            chipDebug.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.DEBUG, isSelected)
+            }
+            chipError.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.ERROR, isSelected)
+            }
+            chipWarn.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.WARN, isSelected)
+            }
+            chipVerbose.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.VERBOSE, isSelected)
+            }
+            chipAssert.setOnCheckedChangeListener { _, isSelected ->
+                updateSelectedTag(logType = LogType.ASSERT, isSelected)
+            }
+        }
+
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -91,7 +123,12 @@ class JamboActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_clear -> {
-                viewModel.deleteAll()
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Delete Logs")
+                    .setMessage("Are you sure you want to delete all logs?")
+                    .setPositiveButton("YES") { _, _ -> viewModel.deleteAll() }
+                    .setNegativeButton("NO") { _, _ -> }
+                    .show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -112,10 +149,9 @@ class JamboActivity : AppCompatActivity() {
 
             adapter.setListener(object : JamboLogAdapter.OnJamboLogClickListener {
                 override fun onLogClicked(log: JamboLog) {
-                    when (log.type) {
-                        LogType.ERROR -> showErrorBottomSheet()
-                        else -> {}
-                    }
+                    viewModel.selectLog(log)
+                    if (log.type == LogType.ERROR)
+                        showMoreBottomSheet()
                 }
             })
 
@@ -124,8 +160,13 @@ class JamboActivity : AppCompatActivity() {
         }
     }
 
-    private fun showErrorBottomSheet() {
+    private fun showMoreBottomSheet() {
+        val dialog = MoreBottomSheet()
+        dialog.show(supportFragmentManager, dialog.tag)
+    }
 
+    private fun updateSelectedTag(logType: LogType, isSelected: Boolean) {
+        if (isSelected) viewModel.updateTagFilter(logType)
     }
 
 }

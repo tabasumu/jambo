@@ -15,7 +15,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
 
-        Jambo.i("This is it My guys")
+//        Jambo.i("Info : something to do with info")
+//        Jambo.e("Error : something to do with error")
+//        Jambo.v("Verbose : something to do with verbose")
+//        Jambo.d("Debug : something to do with debug")
+//        Jambo.w("Warn : something to do with warn")
+//        Jambo.wtf("Assert : something to do with assert")
+//
+//        throw RuntimeException("Triggered crash");
 
     }
 }
