@@ -46,15 +46,15 @@ interface JamboLogDao {
     fun deleteAll()
 
     @Transaction
-    @Query("SELECT * FROM jamboLogTbl ORDER BY log_id ASC")
+    @Query("SELECT * FROM jamboLogTbl ORDER BY log_id DESC")
     fun allJamboLogs(): PagingSource<Int, JamboLog>
 
     @Transaction
-    @Query("SELECT * FROM jamboLogTbl WHERE log_type = :tag AND  log_message LIKE '%' || :message || '%' ORDER BY log_id ASC")
+    @Query("SELECT * FROM jamboLogTbl WHERE log_type = :tag AND  log_message LIKE '%' || :message || '%' ORDER BY log_id DESC")
     fun filterJamboLogWithTagAndMsg(tag: String, message: String): PagingSource<Int, JamboLog>
 
     @Transaction
-    @Query("SELECT * FROM jamboLogTbl WHERE log_message LIKE '%' || :message || '%' ORDER BY log_id ASC")
+    @Query("SELECT * FROM jamboLogTbl WHERE log_message LIKE '%' || :message || '%' ORDER BY log_id DESC")
     fun searchJamboLogs(message: String): PagingSource<Int, JamboLog>
 
 

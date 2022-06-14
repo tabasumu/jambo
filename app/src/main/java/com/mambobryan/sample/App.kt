@@ -21,8 +21,12 @@ class App : Application() {
     }
 
     private fun plantJambo() {
+
+
+
         Jambo.plant(Jambo.DebugTree(this))
-        Thread.setDefaultUncaughtExceptionHandler(JamboExceptionHandler(this))
+
+
     }
 
 }
