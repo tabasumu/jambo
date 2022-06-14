@@ -3,7 +3,6 @@
     <style name="Theme.Jambo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primaryDark</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Background & Surface-->
         <item name="backgroundColor">@color/background</item>
@@ -11,5 +10,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?android:colorBackground</item>
         <item name="android:windowLightStatusBar">false</item>
+        <!-- Customizations-->
+        <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 </resources>

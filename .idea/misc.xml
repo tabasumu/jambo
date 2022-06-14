@@ -4,13 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.334375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.272" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.272" />
+        <entry key="jambo/src/main/res/drawable-night/empty.xml" value="0.1815" />
         <entry key="jambo/src/main/res/drawable/chip_color_state.xml" value="0.14" />
         <entry key="jambo/src/main/res/drawable/chip_select_state.xml" value="0.14" />
+        <entry key="jambo/src/main/res/drawable/empty.xml" value="0.1815" />
         <entry key="jambo/src/main/res/drawable/ic_baseline_close_24.xml" value="0.207" />
         <entry key="jambo/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.14" />
+        <entry key="jambo/src/main/res/drawable/ic_baseline_delete_sweep_24.xml" value="0.1175" />
+        <entry key="jambo/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1175" />
+        <entry key="jambo/src/main/res/drawable/ic_launcher_background.xml" value="0.207" />
+        <entry key="jambo/src/main/res/drawable/ic_launcher_foreground.xml" value="0.272" />
+        <entry key="jambo/src/main/res/drawable/jambo_launcher_background.xml" value="0.207" />
+        <entry key="jambo/src/main/res/drawable/jambo_launcher_foreground.xml" value="0.207" />
+        <entry key="jambo/src/main/res/drawable/launcher_bg.xml" value="0.207" />
         <entry key="jambo/src/main/res/layout/activity_jambo.xml" value="0.3515625" />
         <entry key="jambo/src/main/res/layout/bottom_sheet_more.xml" value="0.35052083333333334" />
         <entry key="jambo/src/main/res/layout/item_jambo_log.xml" value="0.3515625" />
+        <entry key="jambo/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1385" />
+        <entry key="jambo/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1385" />
+        <entry key="jambo/src/main/res/mipmap-xxhdpi/launcher_round.xml" value="0.1855" />
+        <entry key="jambo/src/main/res/mipmap-xxxhdpi/launcher.xml" value="0.1855" />
         <entry key="jambodisplay/src/main/res/layout/activity_main.xml" value="0.1287037037037037" />
       </map>
     </option>
