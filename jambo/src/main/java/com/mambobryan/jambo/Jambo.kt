@@ -181,7 +181,7 @@ class Jambo private constructor() : Thread.UncaughtExceptionHandler {
         protected open fun formatMessage(message: String, args: Array<out Any?>) =
             message.format(*args)
 
-        private fun getStackTraceString(t: Throwable): String {
+        fun getStackTraceString(t: Throwable): String {
             // Don't replace this with Log.getStackTraceString() - it hides
             // UnknownHostException, which is not what we want.
             val sw = StringWriter(256)
@@ -315,9 +315,9 @@ class Jambo private constructor() : Thread.UncaughtExceptionHandler {
         override fun uncaughtException(thread: Thread, throwable: Throwable) {
             saveLog(
                 JamboLog(
-                    tag = tag.toString(),
+                    tag = Exception(throwable).localizedMessage,
                     packageName = application.packageName,
-                    message = throwable.toString(),
+                    message = getStackTraceString(throwable),
                     type = LogType.ERROR
                 )
             )

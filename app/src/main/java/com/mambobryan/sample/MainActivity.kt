@@ -3,7 +3,6 @@ package com.mambobryan.sample
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import com.mambobryan.jambo.Jambo
 import com.mambobryan.sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,16 +14,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
 
-        Jambo.i("Info : something to do with info")
-        Jambo.e("Error : something to do with error")
-        Jambo.v("Verbose : something to do with verbose")
-        Jambo.d("Debug : something to do with debug")
-        Jambo.w("Warn : something to do with warn")
-        Jambo.wtf("Assert : something to do with assert")
+//        Jambo.i("Info : something to do with info")
+//        Jambo.e("Error : something to do with error")
+//        Jambo.v("Verbose : something to do with verbose")
+//        Jambo.d("Debug : something to do with debug")
+//        Jambo.w("Warn : something to do with warn")
+//        Jambo.wtf("Assert : something to do with assert")
 
-        finishAffinity()
+//        finishAffinity()
 
-//        throw RuntimeException("Triggered crash");
+        binding.btnMainCrash.setOnClickListener {
+            throw RuntimeException("Triggered Crash!")
+        }
 
     }
 }
