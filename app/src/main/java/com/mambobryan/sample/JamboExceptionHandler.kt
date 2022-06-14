@@ -1,6 +1,7 @@
 package com.mambobryan.sample
 
 import android.content.Context
+import com.mambobryan.jambo.Jambo
 import kotlin.system.exitProcess
 
 /**
@@ -12,8 +13,9 @@ import kotlin.system.exitProcess
 class JamboExceptionHandler(val context: Context) : Thread.UncaughtExceptionHandler {
 
     override fun uncaughtException(p0: Thread, p1: Throwable) {
+        Jambo.e(p1)
         exit()
-//        Jambo.e(p1)
+//        Thread.UncaughtExceptionHandler()
     }
 
     private fun exit() {
@@ -28,7 +30,7 @@ class JamboExceptionHandler(val context: Context) : Thread.UncaughtExceptionHand
 
 //        Process.sendSignal(Process.myPid(), Process.SIGNAL_KILL);
 
-        exitProcess(-1)
+//        exitProcess(-1)
 
 //        ActivityCompat.finishAffinity(this as Activity)
 
