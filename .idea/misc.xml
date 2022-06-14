@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.272" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.272" />
         <entry key="jambo/src/main/res/drawable-night/empty.xml" value="0.1815" />
+        <entry key="jambo/src/main/res/drawable-night/jambo_launcher_background.xml" value="0.11" />
+        <entry key="jambo/src/main/res/drawable-night/jambo_launcher_foreground.xml" value="0.11" />
         <entry key="jambo/src/main/res/drawable/chip_color_state.xml" value="0.14" />
         <entry key="jambo/src/main/res/drawable/chip_select_state.xml" value="0.14" />
         <entry key="jambo/src/main/res/drawable/empty.xml" value="0.1815" />

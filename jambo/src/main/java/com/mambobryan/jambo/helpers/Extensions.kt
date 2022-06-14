@@ -34,12 +34,12 @@ inline fun SearchView.onQueryTextChanged(crossinline listener: (String) -> Unit)
 fun JamboLog.getColor(): Pair<String, String> {
     return when (this.type) {
         LogType.ALL -> Pair("#F5F5F5", "#C2C2C2")
-        LogType.INFO -> Pair("#EBF9FF", "#85DAFF")      // blue
-        LogType.VERBOSE -> Pair("#EBF9FF", "#85DAFF")   // blue
-        LogType.ERROR -> Pair("#FFEBEB", "#FF8585")     // red
-        LogType.DEBUG -> Pair("#FFFFEB", "#FFFF85")     // yellow
-        LogType.WARN -> Pair("#FFF8EB", "#FFD485")      // orange
-        LogType.ASSERT -> Pair("#EBFFEB", "#85FF85")    // green
+        LogType.INFO -> Pair("#D6FFE6", "#008F37")      // green
+        LogType.VERBOSE -> Pair("#EBEBEB", "#666666")   // gray
+        LogType.ERROR -> Pair("#FFEBEE", "#E60026")     // red
+        LogType.DEBUG -> Pair("#EEFAFC", "#26A7BA")     // blue
+        LogType.WARN -> Pair("#FFEFD6", "#F58F00")      // orange
+        LogType.ASSERT -> Pair("#EBE2F3", "#8147AE")    // purple
     }
 }
 

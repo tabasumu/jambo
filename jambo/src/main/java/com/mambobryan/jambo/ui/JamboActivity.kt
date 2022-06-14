@@ -150,7 +150,6 @@ class JamboActivity : AppCompatActivity() {
             adapter.setListener(object : JamboLogAdapter.OnJamboLogClickListener {
                 override fun onLogClicked(log: JamboLog) {
                     viewModel.selectLog(log)
-                    if (log.type == LogType.ERROR)
                         showMoreBottomSheet()
                 }
             })
