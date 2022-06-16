@@ -30,14 +30,14 @@ For those who would like to see their logs remotely on their android device Jamb
 
 ### Kotlin DSL
 
-``` 
+```kotlin
 dependency {
-  implementation "com.somefancycommunityname.jambo:$version"
+  implementation( "com.somefancycommunityname.jambo:$version")
 } 
 ```
 
 ### Groovy
-``` 
+```groovy
 dependency {
   implementation 'com.somefancycommunityname.jambo:$version'
 } 
@@ -50,7 +50,7 @@ dependency {
 - Initialize Jambo in the App module
 
 ### Kotlin
-```
+```kotlin
 class App : Application {
 
     Jambo.Builder()
@@ -62,7 +62,7 @@ class App : Application {
 ```
 
 ### Java
-```
+```java
 class App extends Application {
 
     Jambo.Builder()
