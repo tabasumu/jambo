@@ -9,7 +9,7 @@
 
 <div align="center">
 
-<p align="center"><img width=12.5% src="/images/logo.svg"></p>
+<p align="center"><img width=10% src="/images/logo.png"></p>
 
 # Jambo
 
