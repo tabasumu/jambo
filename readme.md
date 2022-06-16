@@ -65,7 +65,7 @@ class App : Application {
 ```java
 class App extends Application {
 
-    Jambo.Builder()
+    new Jambo.Builder()
         .enableDebugVillage()      // required
         .enableNotifications(true) // not required & false by default 
         .build()
