@@ -24,7 +24,8 @@ class App : Application() {
 
 
 
-        Jambo.plant(Jambo.DebugTree(this))
+        Jambo.Builder(this).build()
+
 
 
     }
