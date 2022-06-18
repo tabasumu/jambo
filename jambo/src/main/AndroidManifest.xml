@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mambobryan.jambo">
+    package="com.tabasumu.jambo">
 
     <application
         android:allowBackup="true"
         android:supportsRtl="true" >
         <activity
-            android:name="com.mambobryan.jambo.ui.JamboActivity"
+            android:name="com.tabasumu.jambo.ui.JamboActivity"
             android:exported="true"
             android:label="Jambo"
             android:icon="@mipmap/jambo_launcher"
