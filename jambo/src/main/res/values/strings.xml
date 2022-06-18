@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="normal_channel_name">Normal channel</string>
+    <string name="normal_channel_description">Notifications sent when info, debug, verbose, warn and assert is logged</string>
+
+    <string name="error_channel_name">Error channel</string>
+    <string name="error_channel_description">Notifications for when error is logged</string>
+</resources>

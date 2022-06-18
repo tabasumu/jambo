@@ -56,12 +56,13 @@
 
                 <TextView
                     android:id="@+id/tv_log_date"
+                    android:layout_marginTop="8dp"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/gray"
                     android:layout_height="wrap_content"
-                    android:textStyle="italic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_log_message" />
 
                 <TextView
                     android:id="@+id/tv_log_message"
@@ -74,19 +75,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_log_tag" />
-
-                <TextView
-                    android:id="@+id/tv_view_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="view more ..."
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_log_message" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
