@@ -11,13 +11,14 @@
 
 <p align="center"><img width=10% src="/images/logo.png"></p>
 
-# Jambo
+[![](https://jitpack.io/v/tabasumu/jambo.svg)](https://jitpack.io/#tabasumu/jambo)
 
-![GitHub Repo stars](https://img.shields.io:/github/stars/MamboBryan/poetree?style=for-the-badge) ![GitHub branch checks state](https://img.shields.io:/github/checks-status/MamboBryan/poetree/develop?style=for-the-badge)
+# Jambo 
+![GitHub Repo stars](https://img.shields.io:/github/stars/MamboBryan/poetree?style=for-the-badge) ![JitPack](https://img.shields.io/jitpack/v/github/tabasumu/jambo?style=for-the-badge) ![GitHub branch checks state](https://img.shields.io:/github/checks-status/MamboBryan/poetree/develop?style=for-the-badge)
 
 
 Jambo is an open source remote **logging library**. <br/>
-For those who would like to see their logs remotely on their android device Jambo is the library for you. Jambo installs a seperate debug app for intercepting all Jambo 
+For those who would like to see their logs remotely on their android device Jambo is the library for you. Jambo installs a seperate debug app for intercepting all logs called with the Jambo class.
 
 [Installation](#installation) •
 [Usage](#usage) •
