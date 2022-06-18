@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
 
-        Jambo.i("Info : something to do with info")
-//        Jambo.v("Verbose : something to do with verbose")
-//        Jambo.d("Debug : something to do with debug")
-//        Jambo.w("Warn : something to do with warn")
-        Jambo.e("Error : something to do with error")
-//        Jambo.wtf("Assert : something to do with assert")
+        Jambo.w("This is a WARN log")
+        Jambo.i("This is an INFO log")
+        Jambo.d("This is a DEBUG log")
+        Jambo.e("This is an ERROR log")
+        Jambo.v("This is a VERBOSE log")
+        Jambo.wtf("This is an ASSERT log")
 
         binding.btnMainCrash.setOnClickListener {
             throw RuntimeException("Triggered Crash!")
