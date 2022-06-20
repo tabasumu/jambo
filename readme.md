@@ -100,7 +100,7 @@ dependencyResolutionManagement {
 // Kotlin
 class App : Application {
 
-    Jambo.Builder()
+    Jambo.Builder(this) // this is the application context
         .enableNotifications(true) // not required & is false by default 
         .build()
 
@@ -110,11 +110,21 @@ class App : Application {
 // Java
 class App extends Application {
 
-    new Jambo.Builder()
+    new Jambo.Builder(this) // this is the application context
         .enableNotifications(true) // not required & is false by default 
         .build()
 
 }
+```
+
+- Add the Application class in the AndroidManifest
+```
+<application
+        ...
+        android:name=".App"
+        ...
+</application>
+
 ```
 
 - Log using the Jambo class
