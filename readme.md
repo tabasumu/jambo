@@ -1,11 +1,9 @@
 <div align="center">
 
-<p align="center"><img width=10% src="/images/logo.png"></p>
+<p align="center"><img width=12% src="/images/logo.png"></p>
 
-[![](https://jitpack.io/v/tabasumu/jambo.svg)](https://jitpack.io/#tabasumu/jambo)
-
-# Jambo 
-![GitHub Repo stars](https://img.shields.io:/github/stars/MamboBryan/poetree?style=for-the-badge) ![JitPack](https://img.shields.io/jitpack/v/github/tabasumu/jambo?style=for-the-badge) ![GitHub branch checks state](https://img.shields.io:/github/checks-status/MamboBryan/poetree/develop?style=for-the-badge)
+# Jambo [![](https://jitpack.io/v/tabasumu/jambo.svg)](https://jitpack.io/#tabasumu/jambo)
+![GitHub Repo stars](https://img.shields.io:/github/stars/tabasumu/jambo?style=for-the-badge) ![JitPack](https://img.shields.io/jitpack/v/github/tabasumu/jambo?style=for-the-badge) ![GitHub branch checks state](https://img.shields.io:/github/checks-status/tabasumu/jambo/origins?style=for-the-badge)
 
 
 Jambo is an open source remote **logging library**. <br/>
@@ -26,7 +24,6 @@ For those who would like to see their logs remotely on their android device Jamb
 
 Locate your `build.gradle.kts` file in the root project and add :
 ```kotlin
-//build.gradle.kts
 allprojects {
     repositories {
         google()
@@ -144,13 +141,13 @@ class App extends Application {
 
 ## Contributing
 
-![GitHub tag (latest by date)](https://img.shields.io:/github/v/tag/MamboBryan/jambo?style=for-the-badge)
-![GitHub contributors](https://img.shields.io:/github/contributors/MamboBryan/jambo?style=for-the-badge) ![GitHub last commit](https://img.shields.io:/github/last-commit/MamboBryan/jambo?style=for-the-badge) [![Good first issues](https://img.shields.io/github/issues/MamboBryan/jambo/good%20first%20issue?style=for-the-badge)](https://github.com/MamboBryan/jambo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) ![GitHub](https://img.shields.io:/github/license/MamboBryan/jambo?style=for-the-badge) ![GitHub issues](https://img.shields.io:/github/issues-raw/MamboBryan/jambo?style=for-the-badge) ![GitHub pull requests](https://img.shields.io:/github/issues-pr/MamboBryan/jambo?style=for-the-badge) 
+![GitHub tag (latest by date)](https://img.shields.io:/github/v/tag/tabasumu/jambo?style=for-the-badge)
+![GitHub contributors](https://img.shields.io:/github/contributors/tabasumu/jambo?style=for-the-badge) ![GitHub last commit](https://img.shields.io:/github/last-commit/tabasumu/jambo?style=for-the-badge) [![Good first issues](https://img.shields.io/github/issues/tabasumu/jambo/good%20first%20issue?style=for-the-badge)](https://github.com/tabasumu/jambo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) ![GitHub](https://img.shields.io:/github/license/tabasumu/jambo?style=for-the-badge) ![GitHub issues](https://img.shields.io:/github/issues-raw/tabasumu/jambo?style=for-the-badge) ![GitHub pull requests](https://img.shields.io:/github/issues-pr/tabasumu/jambo?style=for-the-badge) 
 
 Your contributions are especially welcome.
 Whether it comes in the form of code patches, ideas, discussion, bug reports, encouragement or criticism, your input is needed.
 
-Visit [issues](https://github.com/MamboBryan/jambo/issues) to get started.
+Visit [issues](https://github.com/tabasumu/jambo/issues) to get started.
 
 <br/>
 
