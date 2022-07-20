@@ -152,7 +152,7 @@ class App extends Application {
 ## Contributing
 
 ![GitHub tag (latest by date)](https://img.shields.io:/github/v/tag/tabasumu/jambo?style=for-the-badge)
-![GitHub contributors](https://img.shields.io:/github/contributors/tabasumu/jambo?style=for-the-badge) ![GitHub last commit](https://img.shields.io:/github/last-commit/tabasumu/jambo?style=for-the-badge) [![Good first issues](https://img.shields.io/github/issues/tabasumu/jambo/good%20first%20issue?style=for-the-badge)](https://github.com/tabasumu/jambo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) ![GitHub](https://img.shields.io:/github/license/tabasumu/jambo?style=for-the-badge) ![GitHub issues](https://img.shields.io:/github/issues-raw/tabasumu/jambo?style=for-the-badge) ![GitHub pull requests](https://img.shields.io:/github/issues-pr/tabasumu/jambo?style=for-the-badge) 
+![GitHub contributors](https://img.shields.io:/github/contributors/tabasumu/jambo?style=for-the-badge) ![GitHub last commit](https://img.shields.io:/github/last-commit/tabasumu/jambo?style=for-the-badge) [![Good first issues](https://img.shields.io/github/issues/tabasumu/jambo/good%20first%20issue?style=for-the-badge)](https://github.com/tabasumu/jambo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)![GitHub issues](https://img.shields.io:/github/issues-raw/tabasumu/jambo?style=for-the-badge) ![GitHub pull requests](https://img.shields.io:/github/issues-pr/tabasumu/jambo?style=for-the-badge) 
 
 Your contributions are especially welcome.
 Whether it comes in the form of code patches, ideas, discussion, bug reports, encouragement or criticism, your input is needed.
